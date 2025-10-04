@@ -1,14 +1,14 @@
 workflows:
-  msr-android:
-    name: MSRBrowser Build
+  android-workflow:
+    name: Build MSRBrowser APK
     max_build_duration: 60
     environment:
-       vars:
-             JAVE_VERSION: 17
-    android: 
-        image:latest
+      vars:
+        JAVA_VERSION: 17
+      android:
+        image: latest
     scripts:
-       - name: Build APK
-          script: ./gradlew assembleDebug
+      - name: Build APK
+        script: ./gradlew assembleDebug
     artifacts:
-      - app/build/outputs/apk/debug/app-debug.apk
+      - app/build/outputs/**/*.apk
