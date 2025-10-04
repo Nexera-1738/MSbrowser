@@ -1,0 +1,18 @@
+workflows:
+  msr-android:
+    name: MSRBrowser Build
+    max_build_duration: 60
+    environment:
+      java: 17
+      vars:
+        ANDROID_HOME: /opt/android-sdk-linux
+        PATH: $PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+    scripts:
+      - name: Install SDK packages
+        script: sdkmanager "platforms;android-34" "build-tools;34.0.0"
+      - name: Clean project
+        script: ./gradlew clean
+      - name: Build debug APK
+        script: ./gradlew assembleDebug
+    artifacts:
+      - app/build/outputs/apk/debug/app-debug.apk

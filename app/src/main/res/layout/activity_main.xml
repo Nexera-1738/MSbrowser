@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainLayout"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Spinner
+            android:id="@+id/profileSpinner"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+
+        <ImageButton
+            android:id="@+id/newProfileButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="New"
+            android:src="@android:drawable/ic_input_add" />
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/urlBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter URL or search term"/>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/goButton"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Go"/>
+
+        <Button
+            android:id="@+id/desktopToggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desktop"/>
+
+        <Button
+            android:id="@+id/extensionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Extensions"/>
+
+        <Button
+            android:id="@+id/cookieButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cookies"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/webViewContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <!-- WebView will be added programmatically -->
+    </FrameLayout>
+
+</LinearLayout>
