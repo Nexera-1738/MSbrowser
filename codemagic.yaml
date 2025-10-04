@@ -1,14 +1,12 @@
 workflows:
-  android-build:
+  android-workflow:
     name: Build MSRBrowser APK
     max_build_duration: 60
     environment:
       vars:
         JAVA_VERSION: 17
     scripts:
-      - name: Ensure Gradle is executable
-        script: chmod +x gradlew
-      - name: Build Debug APK
+      - name: Build APK
         script: ./gradlew assembleDebug
     artifacts:
       - app/build/outputs/**/*.apk
