@@ -10,5 +10,4 @@ workflows:
         script: ./gradlew assembleDebug
     artifacts:
       - app/build/outputs/**/*.apk
-    android:
-      image: latest
+  
